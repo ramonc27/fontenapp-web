@@ -1,1 +1,534 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fonten - La app para entrenadores y alumnos</title>
+  <meta name="description" content="Fonten es la app para que entrenadores gestionen alumnos, sesiones, reservas y pagos de forma sencilla." />
 
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #0f172a;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 24px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #38bdf8, #6366f1, #a855f7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      color: white;
+      box-shadow: 0 18px 40px rgba(99, 102, 241, 0.35);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      font-size: 15px;
+      color: #cbd5e1;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .hero {
+      padding: 90px 0 70px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      background: radial-gradient(circle, rgba(99,102,241,0.45), transparent 65%);
+      right: -180px;
+      top: -120px;
+      z-index: 0;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.12);
+      color: #7dd3fc;
+      border: 1px solid rgba(125, 211, 252, 0.22);
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(44px, 7vw, 78px);
+      line-height: 0.95;
+      letter-spacing: -0.07em;
+      margin-bottom: 24px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #cbd5e1;
+      max-width: 620px;
+      margin-bottom: 32px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #ffffff;
+      color: #0f172a;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 35px rgba(255,255,255,0.16);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #ffffff;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .phone-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.05));
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 34px;
+      padding: 18px;
+      box-shadow: 0 30px 90px rgba(0,0,0,0.35);
+    }
+
+    .phone-screen {
+      border-radius: 26px;
+      background: #020617;
+      min-height: 540px;
+      padding: 22px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .app-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 26px;
+    }
+
+    .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f97316, #facc15);
+    }
+
+    .session-card {
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      border-radius: 24px;
+      padding: 22px;
+      margin-bottom: 18px;
+    }
+
+    .session-card h3 {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .mini-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .mini-card strong {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+
+    .list-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 18px;
+      margin-top: 18px;
+    }
+
+    .list-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      color: #cbd5e1;
+    }
+
+    .list-item:last-child {
+      border-bottom: 0;
+    }
+
+    section {
+      padding: 78px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 48px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1;
+      letter-spacing: -0.05em;
+      margin-bottom: 18px;
+    }
+
+    .section-title p {
+      color: #cbd5e1;
+      font-size: 18px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature {
+      padding: 28px;
+      background: rgba(255,255,255,0.055);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 24px;
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: rgba(56,189,248,0.14);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 18px;
+    }
+
+    .feature h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .feature p {
+      color: #cbd5e1;
+    }
+
+    .cta {
+      padding: 60px;
+      border-radius: 34px;
+      background: linear-gradient(135deg, #2563eb, #9333ea);
+      text-align: center;
+      box-shadow: 0 30px 80px rgba(37, 99, 235, 0.25);
+    }
+
+    .cta h2 {
+      font-size: clamp(34px, 5vw, 54px);
+      letter-spacing: -0.05em;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .cta p {
+      color: rgba(255,255,255,0.86);
+      max-width: 680px;
+      margin: 0 auto 28px;
+      font-size: 18px;
+    }
+
+    footer {
+      padding: 38px 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: #94a3b8;
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a:hover {
+      color: #ffffff;
+    }
+
+    @media (max-width: 880px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 58px;
+      }
+
+      .phone-screen {
+        min-height: auto;
+      }
+
+      .cta {
+        padding: 38px 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="/">
+        <div class="logo">F</div>
+        <span>Fonten</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#entrenadores">Entrenadores</a>
+        <a href="#alumnos">Alumnos</a>
+        <a href="privacidad.html">Privacidad</a>
+        <a href="terminos.html">Términos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge">App para entrenadores personales y alumnos</div>
+          <h1>Gestiona tus alumnos, sesiones y pagos con <span class="gradient-text">Fonten</span>.</h1>
+          <p>
+            Fonten ayuda a entrenadores a organizar su actividad profesional y permite a los alumnos reservar servicios,
+            gestionar sesiones y pagar de forma sencilla y segura.
+          </p>
+
+          <div class="actions">
+            <a class="btn btn-primary" href="contacto.html">Contactar</a>
+            <a class="btn btn-secondary" href="#como-funciona">Ver cómo funciona</a>
+          </div>
+        </div>
+
+        <div class="phone-card">
+          <div class="phone-screen">
+            <div class="app-top">
+              <div>
+                <strong>Hola, entrenador</strong>
+                <p style="color:#94a3b8; font-size:14px;">Resumen de hoy</p>
+              </div>
+              <div class="avatar"></div>
+            </div>
+
+            <div class="session-card">
+              <h3>3 sesiones hoy</h3>
+              <p style="color:rgba(255,255,255,0.82);">Organiza tus alumnos, reservas y cobros desde una sola app.</p>
+            </div>
+
+            <div class="mini-grid">
+              <div class="mini-card">
+                <strong>24</strong>
+                <span style="color:#94a3b8;">Alumnos</span>
+              </div>
+              <div class="mini-card">
+                <strong>€</strong>
+                <span style="color:#94a3b8;">Pagos seguros</span>
+              </div>
+            </div>
+
+            <div class="list-card">
+              <strong>Próximas sesiones</strong>
+              <div class="list-item">
+                <span>Entrenamiento fuerza</span>
+                <span>10:00</span>
+              </div>
+              <div class="list-item">
+                <span>Plan mensual</span>
+                <span>13:30</span>
+              </div>
+              <div class="list-item">
+                <span>Seguimiento alumno</span>
+                <span>18:00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="como-funciona">
+      <div class="container">
+        <div class="section-title">
+          <h2>Todo lo importante en una sola app</h2>
+          <p>
+            Fonten está pensada para simplificar la relación entre entrenadores y alumnos, desde la gestión diaria hasta los pagos.
+          </p>
+        </div>
+
+        <div class="features">
+          <div class="feature" id="entrenadores">
+            <div class="feature-icon">🏋️</div>
+            <h3>Para entrenadores</h3>
+            <p>
+              Crea tu perfil, organiza tus alumnos, gestiona sesiones y lleva el control de tus servicios desde el móvil.
+            </p>
+          </div>
+
+          <div class="feature" id="alumnos">
+            <div class="feature-icon">📅</div>
+            <h3>Para alumnos</h3>
+            <p>
+              Encuentra entrenadores, reserva sesiones, revisa tus planes y mantén toda la información organizada.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">🔒</div>
+            <h3>Pagos seguros</h3>
+            <p>
+              Los pagos se procesan mediante proveedores externos especializados. Fonten no almacena datos completos de tarjetas bancarias.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta">
+          <h2>Próximamente disponible</h2>
+          <p>
+            Estamos preparando Fonten para que entrenadores y alumnos puedan gestionar sus servicios de forma más simple, rápida y profesional.
+          </p>
+          <a class="btn btn-primary" href="contacto.html">Escríbenos</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong>Fonten</strong><br />
+        <span>© 2025 Fonten. Todos los derechos reservados.</span>
+      </div>
+
+      <div class="footer-links">
+        <a href="privacidad.html">Política de privacidad</a>
+        <a href="terminos.html">Términos y condiciones</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="eliminar-cuenta.html">Eliminar cuenta</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
