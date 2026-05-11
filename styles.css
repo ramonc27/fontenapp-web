@@ -22,6 +22,7 @@
 
 html {
   background: var(--dark);
+  overflow-x: hidden;
 }
 
 body {
@@ -33,6 +34,7 @@ body {
     var(--dark);
   color: var(--ink);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 a {
@@ -753,6 +755,26 @@ h2 {
   color: var(--subtle);
 }
 
+.hero-copy,
+.phone-wrap {
+  min-width: 0;
+}
+
+.hero-copy,
+.hero-text,
+h1 {
+  overflow-wrap: anywhere;
+}
+
+.eyebrow {
+  max-width: 100%;
+  white-space: normal;
+}
+
+.phone {
+  max-width: calc(100vw - 32px);
+}
+
 @media (max-width: 920px) {
   .container {
     width: min(100% - 28px, 720px);
@@ -788,7 +810,8 @@ h2 {
     gap: 28px;
   }
 
-  .hero-copy {
+  .hero-copy,
+  .section-title {
     text-align: left;
   }
 
@@ -808,7 +831,7 @@ h2 {
   }
 
   .phone {
-    width: min(330px, 100%);
+    width: min(330px, calc(100vw - 32px));
     border-radius: 28px;
     padding: 12px;
   }
@@ -816,10 +839,6 @@ h2 {
   .section-band,
   .cta-section {
     padding: 54px 0;
-  }
-
-  .section-title {
-    text-align: left;
   }
 
   .section-title .eyebrow {
@@ -833,32 +852,249 @@ h2 {
   }
 }
 
-@media (max-width: 420px) {
-  .container,
-  .legal-shell {
-    width: calc(100% - 24px);
+@media (max-width: 560px) {
+  body {
+    min-width: 0;
   }
 
+  .container,
+  .legal-shell {
+    width: calc(100% - 22px);
+  }
+
+  .site-header {
+    position: relative;
+  }
+
+  .nav {
+    min-height: 56px;
+  }
+
+  .brand-logo {
+    width: 98px;
+    height: 34px;
+  }
+
+  .hero {
+    padding: 20px 0 32px;
+  }
+
+  .hero-grid {
+    gap: 20px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    line-height: 1.35;
+    padding: 6px 10px;
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    font-size: clamp(26px, 8.2vw, 34px);
+    line-height: 1.06;
+    margin-bottom: 12px;
+  }
+
+  .hero-text {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+
+  .actions {
+    gap: 9px;
+  }
+
+  .btn {
+    min-height: 42px;
+    border-radius: 11px;
+    padding: 9px 13px;
+    font-size: 14px;
+  }
+
+  .phone {
+    width: min(292px, calc(100vw - 28px));
+    max-width: calc(100vw - 28px);
+    border-radius: 24px;
+    padding: 9px;
+  }
+
+  .phone-status {
+    height: 25px;
+    font-size: 11px;
+    padding: 0 8px;
+  }
+
+  .app-card,
+  .compact-card {
+    border-radius: 18px;
+    padding: 10px;
+    margin-bottom: 8px;
+  }
+
+  .app-title {
+    font-size: 15px;
+  }
+
+  .app-muted,
+  .org-item span,
+  .sheet span,
+  .announcement span,
+  .saved-price span,
+  .payment-member span {
+    font-size: 10px;
+  }
+
+  .settings-dot,
+  .back {
+    width: 30px;
+    height: 30px;
+  }
+
+  .sheet {
+    border-radius: 12px;
+    padding: 9px;
+    margin-top: 8px;
+  }
+
+  .sheet strong,
+  .org-item strong {
+    font-size: 12px;
+  }
+
+  .input-line,
+  .button-line {
+    border-radius: 10px;
+    padding: 7px 9px;
+    font-size: 11px;
+  }
+
+  .payments-screen {
+    min-height: 360px;
+  }
+
+  .saved-price {
+    border-radius: 11px;
+    padding: 8px;
+  }
+
+  .saved-price strong {
+    font-size: 18px;
+  }
+
+  .price-action {
+    padding: 7px 8px;
+  }
+
+  .year-row {
+    gap: 12px;
+  }
+
+  .year-row span {
+    width: 27px;
+    height: 27px;
+  }
+
+  .month-row {
+    gap: 5px;
+    padding-top: 8px;
+    overflow: hidden;
+  }
+
+  .month-row span,
+  .filter-row span {
+    height: 27px;
+    min-width: 34px;
+    font-size: 10px;
+  }
+
+  .stats-row {
+    gap: 5px;
+    margin-top: 8px;
+  }
+
+  .stats-row div {
+    border-radius: 10px;
+    padding: 6px 3px;
+  }
+
+  .stats-row strong {
+    font-size: 14px;
+  }
+
+  .stats-row span {
+    font-size: 9px;
+  }
+
+  .filter-row {
+    gap: 5px;
+    margin: 8px 0 6px;
+  }
+
+  .filter-row span {
+    padding: 0 7px;
+  }
+
+  .payment-member {
+    border-radius: 12px;
+    padding: 8px;
+    margin-top: 6px;
+    gap: 7px;
+  }
+
+  .payment-member strong {
+    font-size: 12px;
+  }
+
+  .paid-badge,
+  .unpaid-badge {
+    min-width: 68px;
+    height: 23px;
+    font-size: 8px !important;
+  }
+
+  .org-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
+  }
+
+  .org-item {
+    border-radius: 12px;
+    padding: 9px 34px 9px 9px;
+  }
+
+  .announcement {
+    border-radius: 12px;
+    padding: 9px;
+  }
+
+  .announcement p {
+    font-size: 12px;
+    margin-bottom: 7px;
+  }
+
+  .screen-arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 26px;
+  }
+
+  .tabbar {
+    height: 46px;
+    border-radius: 17px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 420px) {
   .actions {
     flex-direction: column;
   }
 
   .btn {
     width: 100%;
-  }
-
-  .phone {
-    width: min(318px, 100%);
-    padding: 10px;
-  }
-
-  .app-card,
-  .compact-card {
-    padding: 12px;
-  }
-
-  .payments-screen {
-    min-height: 408px;
   }
 
   .payment-member {
@@ -869,5 +1105,30 @@ h2 {
   .paid-badge,
   .unpaid-badge {
     align-self: flex-start;
+  }
+}
+
+@media (max-width: 360px) {
+  .container,
+  .legal-shell {
+    width: calc(100% - 18px);
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  .hero-text {
+    font-size: 14px;
+  }
+
+  .phone {
+    width: min(276px, calc(100vw - 20px));
+    max-width: calc(100vw - 20px);
+    padding: 8px;
+  }
+
+  .payments-screen {
+    min-height: 346px;
   }
 }
