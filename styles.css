@@ -64,6 +64,14 @@ a {
   border-radius: 10px;
 }
 
+.brand-logo {
+  width: 154px;
+  height: 52px;
+  object-fit: contain;
+  object-position: left center;
+  display: block;
+}
+
 .nav-links,
 .footer-links {
   display: flex;
@@ -182,6 +190,92 @@ h2 {
   padding: 0 12px;
   font-size: 13px;
   font-weight: 750;
+}
+
+.phone-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.phone-slider input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.screen-track {
+  display: flex;
+  transition: transform 0.35s ease;
+}
+
+.phone-slide {
+  min-width: 100%;
+  padding: 0 1px;
+}
+
+#screen-payments:checked ~ .screen-track {
+  transform: translateX(-100%);
+}
+
+.screen-arrow {
+  position: absolute;
+  top: 46%;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  color: var(--blue);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
+  cursor: pointer;
+  font-size: 34px;
+  line-height: 1;
+  font-weight: 500;
+  user-select: none;
+}
+
+.screen-arrow-next {
+  right: 8px;
+}
+
+.screen-arrow-prev {
+  left: 8px;
+  display: none;
+}
+
+#screen-payments:checked ~ .screen-arrow-next {
+  display: none;
+}
+
+#screen-payments:checked ~ .screen-arrow-prev {
+  display: grid;
+}
+
+.screen-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  z-index: 2;
+  display: flex;
+  gap: 7px;
+  transform: translateX(-50%);
+}
+
+.screen-dots label {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #cbd5e1;
+  cursor: pointer;
+}
+
+#screen-orgs:checked ~ .screen-dots label:first-child,
+#screen-payments:checked ~ .screen-dots label:last-child {
+  width: 18px;
+  background: var(--blue);
 }
 
 .app-card,
@@ -304,6 +398,170 @@ h2 {
 .announcement p {
   margin-bottom: 10px;
   font-size: 14px;
+}
+
+.payments-screen {
+  min-height: 454px;
+}
+
+.saved-price {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #ffffff;
+  padding: 12px;
+}
+
+.saved-price span,
+.payment-member span {
+  display: block;
+  color: #666666;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.saved-price strong {
+  font-size: 25px;
+  line-height: 1.1;
+}
+
+.price-action {
+  border-radius: 10px;
+  background: var(--blue);
+  color: #ffffff !important;
+  padding: 9px 10px;
+}
+
+.calendar-sheet {
+  padding-bottom: 12px;
+}
+
+.year-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.year-row span {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  color: var(--blue);
+  font-weight: 850;
+}
+
+.month-row {
+  display: flex;
+  gap: 7px;
+  overflow: hidden;
+  padding: 12px 0 4px;
+}
+
+.month-row span,
+.filter-row span {
+  height: 32px;
+  min-width: 43px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #dddddd;
+  background: #ffffff;
+  color: #222222;
+  font-size: 12px;
+  font-weight: 750;
+  text-transform: capitalize;
+}
+
+.month-row .active-month,
+.filter-row .active-filter {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: #ffffff;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.stats-row div {
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #e7eefc;
+  padding: 9px 6px;
+  text-align: center;
+}
+
+.stats-row strong {
+  display: block;
+  font-size: 17px;
+  line-height: 1.1;
+}
+
+.stats-row span {
+  color: #666666;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.filter-row {
+  display: flex;
+  gap: 7px;
+  margin: 12px 0 10px;
+}
+
+.filter-row span {
+  min-width: auto;
+  padding: 0 10px;
+}
+
+.payment-member {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border: 1px solid #eeeeee;
+  border-radius: 15px;
+  background: #ffffff;
+  padding: 11px;
+  margin-top: 8px;
+}
+
+.payment-member strong {
+  display: block;
+  font-size: 14px;
+}
+
+.paid-badge,
+.unpaid-badge {
+  min-width: 84px;
+  height: 28px;
+  border-radius: 999px;
+  display: grid !important;
+  place-items: center;
+  font-size: 10px !important;
+  font-weight: 850 !important;
+}
+
+.paid-badge {
+  color: #198754 !important;
+  background: #eaf8ee;
+}
+
+.unpaid-badge {
+  color: #c26a00 !important;
+  background: #fff3e8;
 }
 
 .tabbar {

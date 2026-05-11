@@ -16,8 +16,7 @@
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="index.html" aria-label="Inicio de Fonten">
-        <img src="icon.png" alt="" class="brand-icon" />
-        <span>Fonten</span>
+        <img src="logo-fonten.png" alt="Fonten" class="brand-logo" />
       </a>
 
       <nav class="nav-links" aria-label="Navegación principal">
@@ -52,52 +51,153 @@
               <span>Fonten</span>
             </div>
 
-            <div class="app-card">
-              <div class="app-header">
-                <div>
-                  <p class="app-title">Tus organizaciones</p>
-                  <p class="app-muted">Gestiona clubes, grupos o comunidades</p>
-                </div>
-                <span class="settings-dot">⚙</span>
-              </div>
+            <div class="phone-slider">
+              <input type="radio" name="phone-screen" id="screen-orgs" checked />
+              <input type="radio" name="phone-screen" id="screen-payments" />
 
-              <div class="sheet">
-                <div class="sheet-row">
-                  <div>
-                    <strong>Stripe del organizador</strong>
-                    <span>Pendiente</span>
+              <div class="screen-track">
+                <div class="phone-slide">
+                  <div class="app-card">
+                    <div class="app-header">
+                      <div>
+                        <p class="app-title">Tus organizaciones</p>
+                        <p class="app-muted">Gestiona clubes, grupos o comunidades</p>
+                      </div>
+                      <span class="settings-dot">⚙</span>
+                    </div>
+
+                    <div class="sheet">
+                      <div class="sheet-row">
+                        <div>
+                          <strong>Stripe del organizador</strong>
+                          <span>Pendiente</span>
+                        </div>
+                        <span>▸</span>
+                      </div>
+                    </div>
+
+                    <div class="sheet">
+                      <div class="sheet-row">
+                        <strong>Crear nueva</strong>
+                        <span>▾</span>
+                      </div>
+                      <div class="input-line">Nombre de la organización</div>
+                      <div class="button-line">Crear organización</div>
+                    </div>
+
+                    <div class="org-item">
+                      <div class="org-avatar">C</div>
+                      <div>
+                        <strong>Club Centro</strong>
+                        <span>Código: AB12CD</span>
+                      </div>
+                      <span class="more">⋯</span>
+                    </div>
                   </div>
-                  <span>▸</span>
+
+                  <div class="app-card compact-card">
+                    <div class="mini-top">
+                      <span class="back">←</span>
+                      <strong>Tablón de anuncios</strong>
+                    </div>
+                    <div class="announcement">
+                      <p>Entrenamiento del viernes a las 19:00. Confirmad asistencia.</p>
+                      <span>👍 12</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="phone-slide">
+                  <div class="app-card payments-screen">
+                    <div class="app-header">
+                      <div>
+                        <p class="app-title">Pagos</p>
+                        <p class="app-muted">Club Centro · controla pagos mensuales</p>
+                      </div>
+                    </div>
+
+                    <div class="sheet">
+                      <strong>Tarifa mensual</strong>
+                      <div class="saved-price">
+                        <div>
+                          <span>Tarifa configurada</span>
+                          <strong>19,99 €</strong>
+                        </div>
+                        <span class="price-action">Cambiar</span>
+                      </div>
+                    </div>
+
+                    <div class="sheet calendar-sheet">
+                      <div class="year-row">
+                        <span>←</span>
+                        <strong>2026</strong>
+                        <span>→</span>
+                      </div>
+
+                      <div class="month-row" aria-label="Selector de mes">
+                        <span>ene</span>
+                        <span>feb</span>
+                        <span>mar</span>
+                        <span>abr</span>
+                        <span class="active-month">may</span>
+                        <span>jun</span>
+                      </div>
+
+                      <div class="stats-row">
+                        <div>
+                          <strong>18</strong>
+                          <span>Total</span>
+                        </div>
+                        <div>
+                          <strong>14</strong>
+                          <span>Pagados</span>
+                        </div>
+                        <div>
+                          <strong>4</strong>
+                          <span>No pagados</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="filter-row">
+                      <span class="active-filter">Todos</span>
+                      <span>Pagados</span>
+                      <span>No pagados</span>
+                    </div>
+
+                    <div class="payment-member">
+                      <div>
+                        <strong>Ana López</strong>
+                        <span>Pagado por ana_l</span>
+                      </div>
+                      <span class="paid-badge">PAGADO</span>
+                    </div>
+
+                    <div class="payment-member">
+                      <div>
+                        <strong>Mario Ruiz</strong>
+                        <span>Sin pago registrado</span>
+                      </div>
+                      <span class="unpaid-badge">NO PAGADO</span>
+                    </div>
+
+                    <div class="payment-member">
+                      <div>
+                        <strong>Lucía Martín</strong>
+                        <span>Marcado manualmente</span>
+                      </div>
+                      <span class="paid-badge">PAGADO</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <div class="sheet">
-                <div class="sheet-row">
-                  <strong>Crear nueva</strong>
-                  <span>▾</span>
-                </div>
-                <div class="input-line">Nombre de la organización</div>
-                <div class="button-line">Crear organización</div>
-              </div>
+              <label class="screen-arrow screen-arrow-next" for="screen-payments" aria-label="Ver pagos">›</label>
+              <label class="screen-arrow screen-arrow-prev" for="screen-orgs" aria-label="Ver organizaciones">‹</label>
 
-              <div class="org-item">
-                <div class="org-avatar">C</div>
-                <div>
-                  <strong>Club Centro</strong>
-                  <span>Código: AB12CD</span>
-                </div>
-                <span class="more">⋯</span>
-              </div>
-            </div>
-
-            <div class="app-card compact-card">
-              <div class="mini-top">
-                <span class="back">←</span>
-                <strong>Tablón de anuncios</strong>
-              </div>
-              <div class="announcement">
-                <p>Entrenamiento del viernes a las 19:00. Confirmad asistencia.</p>
-                <span>👍 12</span>
+              <div class="screen-dots" aria-hidden="true">
+                <label for="screen-orgs"></label>
+                <label for="screen-payments"></label>
               </div>
             </div>
 
