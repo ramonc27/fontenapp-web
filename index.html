@@ -52,61 +52,10 @@
             </div>
 
             <div class="phone-slider">
-              <input type="radio" name="phone-screen" id="screen-orgs" checked />
-              <input type="radio" name="phone-screen" id="screen-payments" />
+              <input type="radio" name="phone-screen" id="screen-payments" checked />
+              <input type="radio" name="phone-screen" id="screen-orgs" />
 
               <div class="screen-track">
-                <div class="phone-slide">
-                  <div class="app-card">
-                    <div class="app-header">
-                      <div>
-                        <p class="app-title">Tus organizaciones</p>
-                        <p class="app-muted">Gestiona clubes, grupos o comunidades</p>
-                      </div>
-                      <span class="settings-dot">⚙</span>
-                    </div>
-
-                    <div class="sheet">
-                      <div class="sheet-row">
-                        <div>
-                          <strong>Stripe del organizador</strong>
-                          <span>Pendiente</span>
-                        </div>
-                        <span>▸</span>
-                      </div>
-                    </div>
-
-                    <div class="sheet">
-                      <div class="sheet-row">
-                        <strong>Crear nueva</strong>
-                        <span>▾</span>
-                      </div>
-                      <div class="input-line">Nombre de la organización</div>
-                      <div class="button-line">Crear organización</div>
-                    </div>
-
-                    <div class="org-item">
-                      <div class="org-avatar">C</div>
-                      <div>
-                        <strong>Club Centro</strong>
-                        <span>Código: AB12CD</span>
-                      </div>
-                      <span class="more">⋯</span>
-                    </div>
-                  </div>
-
-                  <div class="app-card compact-card">
-                    <div class="mini-top">
-                      <span class="back">←</span>
-                      <strong>Tablón de anuncios</strong>
-                    </div>
-                    <div class="announcement">
-                      <p>Entrenamiento del viernes a las 19:00. Confirmad asistencia.</p>
-                      <span>👍 12</span>
-                    </div>
-                  </div>
-                </div>
-
                 <div class="phone-slide">
                   <div class="app-card payments-screen">
                     <div class="app-header">
@@ -190,14 +139,65 @@
                     </div>
                   </div>
                 </div>
+
+                <div class="phone-slide">
+                  <div class="app-card">
+                    <div class="app-header">
+                      <div>
+                        <p class="app-title">Tus organizaciones</p>
+                        <p class="app-muted">Gestiona clubes, grupos o comunidades</p>
+                      </div>
+                      <span class="settings-dot">⚙</span>
+                    </div>
+
+                    <div class="sheet">
+                      <div class="sheet-row">
+                        <div>
+                          <strong>Stripe del organizador</strong>
+                          <span>Pendiente</span>
+                        </div>
+                        <span>▸</span>
+                      </div>
+                    </div>
+
+                    <div class="sheet">
+                      <div class="sheet-row">
+                        <strong>Crear nueva</strong>
+                        <span>▾</span>
+                      </div>
+                      <div class="input-line">Nombre de la organización</div>
+                      <div class="button-line">Crear organización</div>
+                    </div>
+
+                    <div class="org-item">
+                      <div class="org-avatar">C</div>
+                      <div>
+                        <strong>Club Centro</strong>
+                        <span>Código: AB12CD</span>
+                      </div>
+                      <span class="more">⋯</span>
+                    </div>
+                  </div>
+
+                  <div class="app-card compact-card">
+                    <div class="mini-top">
+                      <span class="back">←</span>
+                      <strong>Tablón de anuncios</strong>
+                    </div>
+                    <div class="announcement">
+                      <p>Entrenamiento del viernes a las 19:00. Confirmad asistencia.</p>
+                      <span>👍 12</span>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <label class="screen-arrow screen-arrow-next" for="screen-payments" aria-label="Ver pagos">›</label>
-              <label class="screen-arrow screen-arrow-prev" for="screen-orgs" aria-label="Ver organizaciones">‹</label>
+              <label class="screen-arrow screen-arrow-next" for="screen-orgs" aria-label="Ver organizaciones">›</label>
+              <label class="screen-arrow screen-arrow-prev" for="screen-payments" aria-label="Ver pagos">‹</label>
 
               <div class="screen-dots" aria-hidden="true">
-                <label for="screen-orgs"></label>
                 <label for="screen-payments"></label>
+                <label for="screen-orgs"></label>
               </div>
             </div>
 
