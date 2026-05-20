@@ -553,6 +553,10 @@ h2 {
   margin-top: 7px;
 }
 
+.payment-member > div {
+  min-width: 0;
+}
+
 .payment-member strong {
   display: block;
   font-size: 13px;
@@ -1097,14 +1101,9 @@ h1 {
     width: 100%;
   }
 
-  .payment-member {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
   .paid-badge,
   .unpaid-badge {
-    align-self: flex-start;
+    flex: 0 0 auto;
   }
 }
 
