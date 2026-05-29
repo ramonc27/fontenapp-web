@@ -22,6 +22,7 @@
       <nav class="nav-links" aria-label="Navegación principal">
         <a href="#organizaciones">Organizaciones</a>
         <a href="#pagos">Pagos</a>
+        <a href="#precios">Precios</a>
         <a href="privacidad.html">Privacidad</a>
         <a href="Terminos.html">Términos</a>
       </nav>
@@ -61,81 +62,79 @@
                     <div class="app-header">
                       <div>
                         <p class="app-title">Pagos</p>
-                        <p class="app-muted">Club Centro · controla pagos mensuales</p>
+                        <p class="app-muted">Club Horizonte · controla pagos mensuales</p>
                       </div>
                     </div>
 
-                    <div class="sheet">
+                    <div class="tariff-summary">
                       <strong>Tarifa mensual</strong>
-                      <div class="saved-price">
-                        <div>
-                          <span>Tarifa configurada</span>
-                          <strong>19,99 €</strong>
-                        </div>
-                        <span class="price-action">Cambiar</span>
-                      </div>
+                      <span>18,50 €</span>
+                      <small>▶</small>
                     </div>
 
                     <div class="sheet calendar-sheet">
-                      <div class="year-row">
-                        <span>←</span>
-                        <strong>2026</strong>
-                        <span>→</span>
+                      <div class="calendar-heading">
+                        <strong>Mes</strong>
+                        <div class="year-row">
+                          <span>←</span>
+                          <strong>2026</strong>
+                          <span>→</span>
+                        </div>
                       </div>
 
                       <div class="month-row" aria-label="Selector de mes">
-                        <span>ene</span>
-                        <span>feb</span>
-                        <span>mar</span>
-                        <span>abr</span>
-                        <span class="active-month">may</span>
-                        <span>jun</span>
+                        <span>Ene</span>
+                        <span>Feb</span>
+                        <span>Mar</span>
+                        <span class="active-month">Abr</span>
+                        <span>May</span>
+                        <span>Jun</span>
                       </div>
 
                       <div class="stats-row">
                         <div>
-                          <strong>18</strong>
+                          <strong>26</strong>
                           <span>Total</span>
                         </div>
                         <div>
-                          <strong>14</strong>
+                          <strong>21</strong>
                           <span>Pagados</span>
                         </div>
                         <div>
-                          <strong>4</strong>
+                          <strong>5</strong>
                           <span>No pagados</span>
                         </div>
                       </div>
+
+                      <div class="button-line">Exportar Excel</div>
                     </div>
 
-                    <div class="filter-row">
-                      <span class="active-filter">Todos</span>
-                      <span>Pagados</span>
-                      <span>No pagados</span>
+                    <div class="sheet filters-sheet">
+                      <strong>Filtros</strong>
+                      <div class="filter-row">
+                        <span class="active-filter">Todos</span>
+                        <span>Pagados</span>
+                        <span>No pagados</span>
+                      </div>
+                      <div class="input-line">Buscar por miembro o usuario</div>
                     </div>
 
                     <div class="payment-member">
-                      <div>
-                        <strong>Ana López</strong>
-                        <span>Pagado por ana_l</span>
-                      </div>
-                      <span class="paid-badge">PAGADO</span>
-                    </div>
-
-                    <div class="payment-member">
-                      <div>
-                        <strong>Mario Ruiz</strong>
-                        <span>Sin pago registrado</span>
-                      </div>
+                      <strong>Claudia Vega</strong>
                       <span class="unpaid-badge">NO PAGADO</span>
+                      <small>▶</small>
                     </div>
 
                     <div class="payment-member">
-                      <div>
-                        <strong>Lucía Martín</strong>
-                        <span>Marcado manualmente</span>
-                      </div>
+                      <strong>Diego Martín</strong>
                       <span class="paid-badge">PAGADO</span>
+                      <small>▶</small>
+                    </div>
+
+                    <div class="payment-member">
+                      <strong>Nora Pérez</strong>
+                      <span class="paid-badge">PAGADO</span>
+                      <small>▶</small>
                     </div>
                   </div>
                 </div>
@@ -243,6 +242,46 @@
               Define la tarifa mensual, conecta Stripe como organizador y revisa qué miembros están pagados o pendientes cada mes.
             </p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band light">
+      <div class="container pricing" id="precios">
+        <div class="section-title pricing-title">
+          <p class="eyebrow">Precios claros</p>
+          <h2>Fonten no tiene mensualidad: solo se cobra cuando hay un pago.</h2>
+          <p>
+            La app es gratuita para crear organizaciones, gestionar miembros, publicar avisos y controlar pagos. Sin cuota mensual, sin permanencia y sin coste de alta.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="pricing-card primary-fee">
+            <span class="pricing-kicker">Fonten</span>
+            <strong>0,50 €</strong>
+            <p>por cada pago completado correctamente.</p>
+          </article>
+
+          <article class="pricing-card">
+            <span class="pricing-kicker">Stripe</span>
+            <strong>1,5 % + 0,25 €</strong>
+            <p>para tarjetas estándar del Espacio Económico Europeo, según la tarifa pública de Stripe España.</p>
+          </article>
+
+          <article class="pricing-card quiet-fee">
+            <span class="pricing-kicker">Mensualidad</span>
+            <strong>0 €</strong>
+            <p>Fonten no cobra suscripción mensual por usar la app.</p>
+          </article>
+        </div>
+
+        <div class="pricing-example" aria-label="Ejemplo de coste por pago">
+          <div>
+            <span>Ejemplo con una cuota de 15,00 €</span>
+            <strong>Coste total: 0,98 €</strong>
+          </div>
+          <p>0,50 € de Fonten + 0,48 € aprox. de Stripe. El resto llega al organizador.</p>
         </div>
       </div>
     </section>
