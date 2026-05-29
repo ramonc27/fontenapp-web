@@ -187,7 +187,7 @@ h2 {
 }
 
 .phone {
-  width: min(350px, 100%);
+  width: min(390px, 100%);
   border-radius: 30px;
   padding: 14px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.055));
@@ -416,7 +416,7 @@ h2 {
 }
 
 .payments-screen {
-  min-height: 588px;
+  min-height: 486px;
   overflow: hidden;
 }
 
@@ -463,9 +463,8 @@ h2 {
 
 .calendar-heading {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 54px 1fr 54px;
   align-items: center;
-  gap: 12px;
 }
 
 .calendar-heading > strong {
@@ -476,7 +475,8 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 14px;
+  grid-column: 2;
 }
 
 .year-row span {
@@ -501,7 +501,7 @@ h2 {
 .month-row span,
 .filter-row span {
   height: 30px;
-  min-width: 40px;
+  min-width: 44px;
   border-radius: 999px;
   display: grid;
   place-items: center;
@@ -531,7 +531,7 @@ h2 {
   border-radius: 11px;
   background: #ffffff;
   border: 1px solid #e7eefc;
-  padding: 8px 5px;
+  padding: 7px 5px;
   text-align: center;
 }
 
@@ -566,7 +566,7 @@ h2 {
   border: 1px solid #eeeeee;
   border-radius: 15px;
   background: #ffffff;
-  padding: 14px 10px;
+  padding: 13px 10px;
   margin-top: 8px;
 }
 
@@ -942,7 +942,7 @@ h1 {
   }
 
   .phone {
-    width: min(330px, calc(100vw - 32px));
+    width: min(360px, calc(100vw - 32px));
     border-radius: 28px;
     padding: 12px;
   }
@@ -1034,7 +1034,7 @@ h1 {
   }
 
   .phone {
-    width: min(292px, calc(100vw - 28px));
+    width: min(320px, calc(100vw - 28px));
     max-width: calc(100vw - 28px);
     border-radius: 24px;
     padding: 9px;
@@ -1090,7 +1090,7 @@ h1 {
   }
 
   .payments-screen {
-    min-height: 512px;
+    min-height: 432px;
   }
 
   .tariff-summary {
@@ -1108,7 +1108,7 @@ h1 {
   }
 
   .calendar-heading {
-    gap: 8px;
+    grid-template-columns: 42px 1fr 42px;
   }
 
   .year-row {
@@ -1242,12 +1242,12 @@ h1 {
   }
 
   .phone {
-    width: min(276px, calc(100vw - 20px));
+    width: min(300px, calc(100vw - 20px));
     max-width: calc(100vw - 20px);
     padding: 8px;
   }
 
   .payments-screen {
-    min-height: 492px;
+    min-height: 418px;
   }
 }
