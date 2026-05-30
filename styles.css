@@ -445,10 +445,23 @@ h2 {
 
 .tariff-summary small,
 .payment-member small {
-  color: #7a7a7a;
-  font-size: 10px;
-  font-weight: 850;
-  line-height: 1;
+  width: 7px;
+  height: 10px;
+  flex: 0 0 auto;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+}
+
+.tariff-summary small::before,
+.payment-member small::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 7px solid #777777;
 }
 
 .payment-member span {
