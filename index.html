@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fonten - Gestiona organizaciones, miembros y pagos</title>
+  <title>Fonten - Organiza miembros, avisos y pagos</title>
   <meta
     name="description"
-    content="Fonten es una app para crear organizaciones, gestionar miembros, publicar avisos internos y controlar pagos mensuales."
+    content="Fonten ayuda a organizaciones, clubes y comunidades a gestionar miembros, anuncios, cuotas externas, pagos con Stripe, pagos manuales y exportaciones a Excel."
   />
   <link rel="icon" href="favicon.png" />
   <link rel="stylesheet" href="styles.css" />
@@ -16,300 +16,358 @@
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="index.html" aria-label="Inicio de Fonten">
-        <img src="logo-fonten.png" alt="Fonten" class="brand-logo" />
+        <img src="favicon.png" alt="" class="brand-logo" />
+        <span>Fonten</span>
       </a>
 
       <nav class="nav-links" aria-label="Navegación principal">
         <a href="#organizaciones">Organizaciones</a>
         <a href="#pagos">Pagos</a>
+        <a href="#tablon">Tablón</a>
         <a href="#precios">Precios</a>
         <a href="privacidad.html">Privacidad</a>
         <a href="Terminos.html">Términos</a>
+        <a href="Eliminar-cuenta.html">Eliminar cuenta</a>
       </nav>
     </div>
   </header>
 
   <main>
     <section class="hero">
+      <div class="hero-lines" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">App móvil para comunidades y organizaciones</p>
-          <h1>Fonten organiza miembros, avisos y pagos en un solo lugar.</h1>
+          <div class="hero-brand">
+            <img src="favicon.png" alt="" />
+            <div>
+              <strong>Fonten</strong>
+              <span>app para comunidades</span>
+            </div>
+          </div>
+
+          <h1>Organiza miembros, avisos y pagos <span>en un solo lugar.</span></h1>
           <p class="hero-text">
-            Crea organizaciones, comparte el código de acceso con tus miembros, publica avisos en el tablón y controla pagos mensuales de forma sencilla.
+            Crea una organización, comparte su código, publica anuncios internos y centraliza
+            quién ha pagado, quién no y qué pagos se han registrado fuera de Stripe.
           </p>
 
-          <div class="actions">
-            <a class="btn btn-primary" href="contacto.html">Contactar con soporte</a>
-            <a class="btn btn-secondary" href="#como-funciona">Ver funciones</a>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#funciones">Ver funciones</a>
+            <a class="btn btn-secondary" href="contacto.html">Contactar</a>
+          </div>
+
+          <div class="hero-metrics" aria-label="Funciones principales">
+            <span>Organizaciones con código</span>
+            <span>Tablón interno</span>
+            <span>Cuotas externas</span>
           </div>
         </div>
 
-        <div class="phone-wrap" aria-label="Vista previa de pantallas reales de Fonten">
-          <div class="phone">
-            <div class="phone-status">
-              <span>9:41</span>
-              <span>Fonten</span>
-            </div>
+        <div class="phone-stage" aria-label="Vista del organizador controlando cuotas y pagos en Fonten">
+          <div class="hero-phone">
+            <div class="hero-phone-side hero-phone-side-left"></div>
+            <div class="hero-phone-side hero-phone-side-right"></div>
+            <div class="hero-phone-screen">
+              <div class="hero-phone-status">
+                <span>16:41</span>
+                <i></i>
+                <span>••• Wi-Fi 37</span>
+              </div>
 
-            <div class="phone-slider">
-              <input type="radio" name="phone-screen" id="screen-payments" checked />
-              <input type="radio" name="phone-screen" id="screen-orgs" />
+              <div class="hero-phone-content">
+                <h3>Pagos</h3>
+                <p>Academia Horizonte · 128 miembros</p>
 
-              <div class="screen-track">
-                <div class="phone-slide">
-                  <div class="app-card payments-screen">
-                    <div class="app-header">
-                      <div>
-                        <p class="app-title">Pagos</p>
-                        <p class="app-muted">Club Horizonte · controla pagos mensuales</p>
-                      </div>
-                    </div>
-
-                    <div class="tariff-summary">
-                      <strong>Tarifa mensual</strong>
-                      <span>18,50 €</span>
-                      <small>▶</small>
-                    </div>
-
-                    <div class="sheet calendar-sheet">
-                      <div class="calendar-heading">
-                        <strong>Mes</strong>
-                        <div class="year-row">
-                          <span>←</span>
-                          <strong>2026</strong>
-                          <span>→</span>
-                        </div>
-                      </div>
-
-                      <div class="month-row" aria-label="Selector de mes">
-                        <span>Ene</span>
-                        <span>Feb</span>
-                        <span>Mar</span>
-                        <span class="active-month">Abr</span>
-                        <span>May</span>
-                        <span>Jun</span>
-                      </div>
-
-                      <div class="stats-row">
-                        <div>
-                          <strong>26</strong>
-                          <span>Total</span>
-                        </div>
-                        <div>
-                          <strong>21</strong>
-                          <span>Pagados</span>
-                        </div>
-                        <div>
-                          <strong>5</strong>
-                          <span>No pagados</span>
-                        </div>
-                      </div>
-
-                      <div class="button-line">Exportar Excel</div>
-                    </div>
-
-                    <div class="sheet filters-sheet">
-                      <strong>Filtros</strong>
-                      <div class="filter-row">
-                        <span class="active-filter">Todos</span>
-                        <span>Pagados</span>
-                        <span>No pagados</span>
-                      </div>
-                      <div class="input-line">Buscar por miembro o usuario</div>
-                    </div>
-
-                    <div class="payment-member">
-                      <strong>Claudia Vega</strong>
-                      <span class="unpaid-badge">NO PAGADO</span>
-                      <small>▶</small>
-                    </div>
-
-                    <div class="payment-member">
-                      <strong>Diego Martín</strong>
-                      <span class="paid-badge">PAGADO</span>
-                      <small>▶</small>
-                    </div>
-                  </div>
+                <div class="phone-card phone-price">
+                  <strong>Tarifa mensual</strong>
+                  <b>32,00 €</b>
+                  <span>›</span>
                 </div>
 
-                <div class="phone-slide">
-                  <div class="app-card">
-                    <div class="app-header">
-                      <div>
-                        <p class="app-title">Tus organizaciones</p>
-                        <p class="app-muted">Gestiona clubes, grupos o comunidades</p>
-                      </div>
-                      <span class="settings-dot">⚙</span>
-                    </div>
-
-                    <div class="sheet">
-                      <div class="sheet-row">
-                        <div>
-                          <strong>Stripe del organizador</strong>
-                          <span>Pendiente</span>
-                        </div>
-                        <span>▸</span>
-                      </div>
-                    </div>
-
-                    <div class="sheet">
-                      <div class="sheet-row">
-                        <strong>Crear nueva</strong>
-                        <span>▾</span>
-                      </div>
-                      <div class="input-line">Nombre de la organización</div>
-                      <div class="button-line">Crear organización</div>
-                    </div>
-
-                    <div class="org-item">
-                      <div class="org-avatar">C</div>
-                      <div>
-                        <strong>Club Centro</strong>
-                        <span>Código: AB12CD</span>
-                      </div>
-                      <span class="more">⋯</span>
+                <div class="phone-card phone-month">
+                  <div class="phone-month-head">
+                    <strong>Mes</strong>
+                    <div>
+                      <button type="button">←</button>
+                      <b>2026</b>
+                      <button type="button">→</button>
                     </div>
                   </div>
 
-                  <div class="app-card compact-card">
-                    <div class="mini-top">
-                      <span class="back">←</span>
-                      <strong>Tablón de anuncios</strong>
-                    </div>
-                    <div class="announcement">
-                      <p>Entrenamiento del viernes a las 19:00. Confirmad asistencia.</p>
-                      <span>👍 12</span>
-                    </div>
+                  <div class="phone-months">
+                    <span>Mar</span>
+                    <span>Abr</span>
+                    <strong>May</strong>
+                    <span>Jun</span>
+                    <span>Jul</span>
                   </div>
+
+                  <div class="phone-stats">
+                    <span><b>128</b>Total</span>
+                    <span><b>103</b>Pagados</span>
+                    <span><b>25</b>No pagados</span>
+                  </div>
+
+                  <div class="phone-export">Exportar Excel</div>
+                </div>
+
+                <div class="phone-card phone-filters">
+                  <strong>Filtros</strong>
+                  <div>
+                    <span>Todos</span>
+                    <span>Pagados</span>
+                    <span>No pagados</span>
+                  </div>
+                  <p>Buscar por miembro o usuario</p>
+                </div>
+
+                <div class="phone-member paid">
+                  <strong>Lucía Romero</strong>
+                  <span>Pagado</span>
+                  <i>›</i>
+                </div>
+                <div class="phone-member unpaid">
+                  <strong>Pablo Martín</strong>
+                  <span>No pagado</span>
+                  <i>›</i>
+                </div>
+                <div class="phone-member paid">
+                  <strong>Claudia Vega</strong>
+                  <span>Pagado</span>
+                  <i>›</i>
+                </div>
+                <div class="phone-member unpaid">
+                  <strong>Sergio Ruiz</strong>
+                  <span>No pagado</span>
+                  <i>›</i>
                 </div>
               </div>
 
-              <label class="screen-arrow screen-arrow-next" for="screen-orgs" aria-label="Ver organizaciones">›</label>
-              <label class="screen-arrow screen-arrow-prev" for="screen-payments" aria-label="Ver pagos">‹</label>
-
-              <div class="screen-dots" aria-hidden="true">
-                <label for="screen-payments"></label>
-                <label for="screen-orgs"></label>
+              <div class="hero-phone-tabbar">
+                <span>🏠</span>
+                <span>✚</span>
+                <span>👥</span>
+                <span>💵</span>
               </div>
-            </div>
-
-            <div class="tabbar">
-              <span>⌂</span>
-              <span>＋</span>
-              <span>👥</span>
-              <span>💶</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="como-funciona" class="section-band">
+    <section id="funciones" class="section section-problem">
+      <div class="container problem-grid">
+        <div>
+          <p class="eyebrow">El problema</p>
+          <h2>¿Cansado de perseguir pagos cada mes?</h2>
+          <p>
+            Bizums, transferencias, efectivo, Stripe, apuntes sueltos e impagos terminan
+            repartidos entre chats, hojas de cálculo y memoria. Fonten lo centraliza para que el
+            organizador tenga una vista única y clara.
+          </p>
+        </div>
+
+        <div class="floating-tags" aria-label="Pagos que Fonten ayuda a ordenar">
+          <span>Bizums</span>
+          <span>transferencias</span>
+          <span>efectivo</span>
+          <span>Stripe</span>
+          <span>impagos</span>
+          <span>Excel</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="organizaciones" class="section">
       <div class="container">
         <div class="section-title">
-          <p class="eyebrow">Lo que hace Fonten</p>
-          <h2>Una app clara para el día a día de una organización.</h2>
+          <p class="eyebrow">Gestión diaria</p>
+          <h2>Todo empieza creando una organización.</h2>
+          <p>
+            Fonten está pensada para clubes, grupos, entrenadores y comunidades que necesitan
+            organizar personas, avisos y cuotas sin montar una estructura complicada.
+          </p>
         </div>
 
-        <div class="features">
-          <article class="feature" id="organizaciones">
-            <div class="feature-icon">01</div>
-            <h3>Organizaciones con código</h3>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span>01</span>
+            <h3>Crea tu organización</h3>
             <p>
-              Los organizadores crean organizaciones, añaden imagen, comparten un código de acceso y gestionan solicitudes de miembros.
+              El organizador crea un espacio propio con nombre, imagen y código de acceso. Los
+              miembros pueden unirse mediante ese código y el organizador mantiene el control de
+              quién pertenece a la organización.
             </p>
           </article>
 
-          <article class="feature">
-            <div class="feature-icon">02</div>
-            <h3>Tablón interno</h3>
+          <article class="feature-card">
+            <span>02</span>
+            <h3>Define la cuota externa</h3>
             <p>
-              Publica anuncios de hasta 280 caracteres, edítalos o elimínalos. Los miembros pueden reaccionar y denunciar contenido inapropiado.
+              Configura cuánto debe recibir la organización por cada miembro. Ese importe
+              representa servicios externos a la app y no desbloquea funciones digitales dentro de
+              Fonten.
             </p>
           </article>
 
-          <article class="feature" id="pagos">
-            <div class="feature-icon">03</div>
-            <h3>Pagos mensuales</h3>
+          <article class="feature-card">
+            <span>03</span>
+            <h3>Conecta Stripe</h3>
             <p>
-              Define la tarifa mensual y conecta Stripe como organizador. A partir de ahí, los usuarios pueden pagar desde la app y Fonten registra automáticamente qué miembros están pagados o pendientes cada mes.
+              El organizador conecta su cuenta de Stripe para que los usuarios puedan pagar mes a
+              mes desde la app. Fonten muestra el total, la comisión de la app y la comisión
+              estimada de Stripe antes de pagar.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section-band light">
-      <div class="container pricing" id="precios">
-        <div class="section-title pricing-title">
+    <section id="pagos" class="section section-payments">
+      <div class="container payments-grid">
+        <div>
+          <p class="eyebrow">Pagos ordenados</p>
+          <h2>Ves al instante quién ha pagado y quién sigue pendiente.</h2>
+          <p>
+            Cada mes tiene su propio estado. Puedes filtrar por todos, pagados o no pagados,
+            buscar miembros concretos y abrir el detalle para revisar método, fecha, usuario
+            pagador e importe registrado.
+          </p>
+
+          <div class="callout">
+            <strong>También hay pagos manuales.</strong>
+            <span>
+              Si alguien paga por transferencia, efectivo, Bizum u otra vía externa, el
+              organizador puede marcar ese miembro como pagado manualmente y dejarlo reflejado en
+              Fonten.
+            </span>
+          </div>
+        </div>
+
+        <div class="workflow">
+          <div class="workflow-step">
+            <span>1</span>
+            <strong>Selecciona el mes</strong>
+            <p>Consulta abril, mayo o cualquier periodo que necesites revisar.</p>
+          </div>
+          <div class="workflow-step">
+            <span>2</span>
+            <strong>Filtra estados</strong>
+            <p>Distingue pagados, pendientes y miembros vinculados a cada usuario.</p>
+          </div>
+          <div class="workflow-step">
+            <span>3</span>
+            <strong>Exporta Excel</strong>
+            <p>Genera un resumen con importes, comisiones, fechas, métodos y estados.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tablon" class="section">
+      <div class="container split-section">
+        <div class="announcement-demo">
+          <div class="org-current">
+            <span>C</span>
+            <div>
+              <small>Organización actual</small>
+              <strong>Club Central</strong>
+            </div>
+          </div>
+          <div class="announcement-top">
+            <span>←</span>
+            <strong>Tablón de anuncios</strong>
+          </div>
+          <div class="announcement-card">
+            <button type="button" aria-label="Opciones del anuncio">•••</button>
+            <p>¡Bienvenidos al Club Central! 👋</p>
+            <small>26/05/2026, 7:53:10 PM</small>
+            <div>
+              <span>👍 1</span>
+            </div>
+          </div>
+          <div class="announcement-card muted-card">
+            <button type="button" aria-label="Opciones del anuncio">•••</button>
+            <p>Recordatorio: Entrenamiento mañana 8:00 AM en el campo principal ⚽</p>
+            <small>25/05/2026, 6:15:00 PM</small>
+            <div>
+              <span>👍 3</span>
+            </div>
+          </div>
+          <div class="announcement-card muted-card">
+            <button type="button" aria-label="Opciones del anuncio">•••</button>
+            <p>Importante: Traer documento de identidad para el torneo del sábado 🏆</p>
+            <small>24/05/2026, 9:20:45 AM</small>
+            <div>
+              <span>👍 2</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <p class="eyebrow">Comunicación interna</p>
+          <h2>Anuncios para todos los miembros.</h2>
+          <p>
+            Publica avisos dentro de cada organización para que los miembros tengan la información
+            importante en el mismo sitio que los pagos. Los usuarios pueden reaccionar con la
+            manita arriba, y la app incluye opciones de moderación como denuncias y bloqueos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="precios" class="section section-pricing">
+      <div class="container">
+        <div class="section-title centered">
           <p class="eyebrow">Precios claros</p>
           <h2>Fonten no tiene mensualidad: solo se cobra cuando hay un pago.</h2>
           <p>
-            La app es gratuita para crear organizaciones, gestionar miembros, publicar avisos y controlar pagos. Sin cuota mensual, sin permanencia y sin coste de alta.
+            Crear organizaciones, gestionar miembros, publicar avisos y controlar cuotas externas
+            no tiene coste mensual ni permanencia.
           </p>
         </div>
 
         <div class="pricing-grid">
-          <article class="pricing-card primary-fee">
-            <span class="pricing-kicker">Fonten</span>
+          <article class="pricing-card">
+            <span>Fonten</span>
             <strong>0,50 €</strong>
             <p>por cada pago completado correctamente.</p>
           </article>
 
           <article class="pricing-card">
-            <span class="pricing-kicker">Stripe</span>
+            <span>Stripe</span>
             <strong>1,5 % + 0,25 €</strong>
             <p>para tarjetas estándar del Espacio Económico Europeo, según la tarifa pública de Stripe España.</p>
           </article>
 
-          <article class="pricing-card quiet-fee">
-            <span class="pricing-kicker">Mensualidad</span>
+          <article class="pricing-card">
+            <span>Mensualidad</span>
             <strong>0 €</strong>
-            <p>Fonten no cobra suscripción mensual por usar la app.</p>
+            <p>Fonten no cobra suscripción por usar la app ni desbloquea funciones digitales con estos pagos.</p>
           </article>
         </div>
 
-        <div class="pricing-example" aria-label="Ejemplo de coste por pago">
-          <div>
-            <span>Ejemplo con una cuota de 15,00 €</span>
-            <strong>Coste total: 0,98 €</strong>
-          </div>
-          <p>0,50 € de Fonten + 0,48 € aprox. de Stripe. El resto llega al organizador.</p>
+        <div class="security-strip">
+          <strong>Pagos muy seguros</strong>
+          <span>
+            Los cobros se procesan con Stripe. La información viaja cifrada y la gestión del cobro
+            se realiza con altos estándares de seguridad.
+          </span>
         </div>
       </div>
     </section>
 
-    <section class="section-band light">
-      <div class="container split">
+    <section class="section cta-section">
+      <div class="container cta">
         <div>
-          <p class="eyebrow">Seguridad y moderación</p>
-          <h2>Preparada para publicar en tiendas.</h2>
+          <p class="eyebrow">Soporte</p>
+          <h2>¿Necesitas ayuda con Fonten?</h2>
           <p>
-            La web incluye enlaces públicos a privacidad, términos, contacto y eliminación de cuenta, alineados con las funciones reales de la app: Supabase, Stripe, permisos de galería, denuncias, bloqueos y gestión de cuenta.
+            Para soporte, privacidad, moderación, eliminación de cuenta o incidencias con pagos,
+            escríbenos desde el email asociado a tu cuenta.
           </p>
         </div>
-
-        <div class="checks">
-          <span>Cuenta y perfil</span>
-          <span>Organizaciones y membresías</span>
-          <span>Publicaciones y reacciones</span>
-          <span>Denuncias y bloqueos</span>
-          <span>Pagos con Stripe</span>
-          <span>Eliminación desde Ajustes</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta-section">
-      <div class="container">
-        <div class="cta">
-          <h2>Soporte de Fonten</h2>
-          <p>
-            Para soporte, privacidad, moderación o incidencias con tu cuenta, escríbenos desde el email asociado a Fonten.
-          </p>
-          <a class="btn btn-primary" href="mailto:fontenapp.support@gmail.com">fontenapp.support@gmail.com</a>
-        </div>
+        <a class="btn btn-primary" href="mailto:fontenapp.support@gmail.com">fontenapp.support@gmail.com</a>
       </div>
     </section>
   </main>
